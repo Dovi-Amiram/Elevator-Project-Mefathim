@@ -1,5 +1,5 @@
 {
-    "num_of_levels": 15,
+    "num_of_levels": 6,
     "num_of_elevators": 3,
     "level_image": "level_image.jpg",
     "elevator_image": "elevator_image.png"
