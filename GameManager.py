@@ -2,38 +2,13 @@ import json
 import pygame
 import sys
 from Building import Building
-
-# constants:
-
-WINDOW_WIDTH, WINDOW_HEIGHT = 1200, 750
-WHITE_MARGIN = 7
-BLACK_SPACER_HEIGHT = 7
-SCROLL_BAR_WIDTH = 20
-SCROLL_BAR_COLOR = (150, 150, 150)
-SCROLL_BAR_BG_COLOR = (200, 200, 200)
-BLACK = (0, 0, 0)
-WHITE = (255, 255, 255)
-CAPTION = "Dovi's Elevator Project - Mefathim"
-
-
-def load_json(file_path):
-    with open(file_path, 'r') as file:
-        data = json.load(file)
-    return data
-
-
-def calculate_world_height(num_of_levels, level_height):
-    # Calculate the total height of the world dynamically
-    total_level_height = (
-            num_of_levels * (level_height + BLACK_SPACER_HEIGHT) - BLACK_SPACER_HEIGHT)
-    return total_level_height + 2 * WHITE_MARGIN
+from settings import *
 
 
 class GameManager:
 
-    def __init__(self, jason_file_path):
+    def __init__(self):
         self.__white_margin = WHITE_MARGIN
-        data = load_json(jason_file_path)
 
         level_image_height = pygame.image.load(data["level_image"]).get_height()
         num_of_levels = data["num_of_levels"] + 1
@@ -92,7 +67,8 @@ class GameManager:
                 self.__screen.blit(self.__world, (-self.__scroll_x, -self.scroll_y))
 
                 # Draw the scrollbar background
-                pygame.draw.rect(self.__screen, self.__scrollbar_bg_color, (0, 0, self.__scrollbar_width, self.__window_size[1]))
+                pygame.draw.rect(self.__screen, self.__scrollbar_bg_color,
+                                 (0, 0, self.__scrollbar_width, self.__window_size[1]))
 
                 # Calculate the scrollbar position
                 scrollbar_height = self.__window_size[1] * (self.__window_size[1] / self.__world_height)
@@ -118,5 +94,5 @@ class GameManager:
         return self.__world
 
 
-game = GameManager("data.json")
+game = GameManager()
 game.run()
