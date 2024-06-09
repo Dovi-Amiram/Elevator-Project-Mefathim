@@ -1,3 +1,5 @@
+import time
+
 import pygame
 from collections import deque
 
@@ -6,8 +8,7 @@ ELEVATOR_MARGIN = 30
 
 class Elevator:
 
-    def __init__(self, elevator_num, image, sapce_width=ELEVATOR_MARGIN):
-        self.__space_width = sapce_width
+    def __init__(self, elevator_num, image):
         self.__image = image
         self.__image_width = image.get_width()
         self.__image_height = image.get_height()
@@ -15,7 +16,9 @@ class Elevator:
         self.__current_level = 0
         self.__tasks = deque([])
         self.__x = 0
-        self__y = 0
+        self.__y = 0
+        self.__departure_time = 0
+        self.__departure_y = 0
 
     def draw_start_position(self, world, building_right_edge, building_deck, level_height):
         x_pos = building_right_edge + self.__space_width + (self.__image_width + self.__space_width) * self.__num
@@ -24,10 +27,16 @@ class Elevator:
 
     def move(self):
         if len(self.__tasks) > 0:
-            pass
+            dest, _ = self.__tasks.popleft()
+            dest_y =
+            if self.__y != dest_y:
+                distance = dest_y - self.__y
+                direction = distance / abs(distance)
+                elapsed_time = time.time() - self.__departure_time
+                new_y = self.__departure_y +
 
-    def draw(self):
-        pass
+    def draw(self, world):
+        world.blit(self.__image, (self.__x, self.__y))
 
     def update(self):
         pass
@@ -44,3 +53,19 @@ class Elevator:
     def get_last_task(self):
         if len(self.__tasks) > 0:
             return self.__tasks[-1]
+
+    def set_coordinates(self, x, y):
+        self.__x = x
+        self.__y = y
+
+    def get_num(self):
+        return self.__num
+
+    def get_width(self):
+        return self.__image_width
+
+    def get_height(self):
+        return self.__image_height
+
+    def set_y(self, y):
+        self.__y = y

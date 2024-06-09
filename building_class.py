@@ -1,6 +1,6 @@
 import pygame
-from Elevator import Elevator
-from Level import Level
+from elevator_class import Elevator
+from level_class import Level
 from settings import *
 
 
@@ -10,16 +10,24 @@ class Building:
         self.__elevator_img = elevator_image
         self.__levels = [Level(level_num, self.__level_img) for level_num in range(num_of_levels + 1)]
         for level in self.__levels:
-            level.set_deck(world, WHITE_MARGIN)
-        self.__elevators = [Elevator(elevator_num, self.__elevator_img) for elevator_num in range(num_of_elevators)]
+            rect = LEVEL_RECT
+            rect.y = world.get_height() - ((level.get_num() + 1) * LEVEL_HEIGHT + WHITE_MARGIN)
+            level.set_rect(rect)
+
         self.__right_edge = self.__level_img.get_width() + WHITE_MARGIN
         self.__deck = world.get_height() - WHITE_MARGIN
 
+        self.__elevators = [Elevator(elevator_num, self.__elevator_img) for elevator_num in range(num_of_elevators)]
+        for elevator in self.__elevators:
+            x_pos = self.__right_edge + WHITE_MARGIN + elevator.get_num() * (WHITE_MARGIN + elevator.get_width())
+            y_pos = self.__deck - elevator.get_height()
+            elevator.set_coordinates(x_pos, y_pos)
+
     def draw(self, world):
         for level in self.__levels:
-            level.draw_self(world, WHITE_MARGIN)
+            level.draw(world)
         for elevator in self.__elevators:
-            elevator.draw_start_position(world, building_right_edge, building_deck, self.__level_img.get_height())
+            elevator.draw(world)
 
     def get_num_of_levels(self):
         return len(self.__levels)

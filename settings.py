@@ -13,21 +13,31 @@ data = load_json(FILE_PATH)
 NUM_OF_ELEVATORS = data["num_of_elevators"]
 NUM_OF_LEVELS = data["num_of_levels"] + 1
 ELEVATOR_SCALE = (60, 60)
-ELEVATOR_IMAGE = pygame.transform.scale(pygame.image.load(data["elevator_img_path"]), ELEVATOR_SCALE)
-LEVEL_IMAGE = pygame.image.load(data["level_img_path"])
+ELEVATOR_IMAGE = pygame.transform.scale(pygame.image.load(data["elevator_image"]), ELEVATOR_SCALE)
+LEVEL_IMAGE = pygame.image.load(data["level_image"])
 
 # constants
 WINDOW_WIDTH, WINDOW_HEIGHT = 1200, 750
 WHITE_MARGIN = 7
 BLACK_SPACER_HEIGHT = 7
-SCROLL_BAR_WIDTH = 20
-SCROLL_BAR_COLOR = (150, 150, 150)
-SCROLL_BAR_BG_COLOR = (200, 200, 200)
+
+BUTTON_WIDTH, BUTTON_HEIGHT = 45, 30
+BUTTON_COLOR = (220, 220, 220)  # Grey color
+TEXT_COLOR = (0, 0, 0)  # Black color
+SHADOW_COLOR = (50, 50, 50)
+BORDER_COLOR = (30, 30, 30)
+FONT_SIZE = 30
+
 CAPTION = "Dovi's Elevator Project - Mefathim"
 TRAVEL_TIME_PER_LEVEL = 0.5  # in seconds
 
 LEVEL_WIDTH, LEVEL_HEIGHT = LEVEL_IMAGE.get_size()
 LEVEL_HEIGHT += BLACK_SPACER_HEIGHT
+
+LEVEL_RECT = LEVEL_IMAGE.get_rect()
+LEVEL_RECT.height = LEVEL_HEIGHT
+LEVEL_RECT.topleft = (WHITE_MARGIN, 0)
+
 ELEVATOR_WIDTH, ELEVATOR_HEIGHT = ELEVATOR_IMAGE.get_size()
 
 TRAVEL_SPEED = int((LEVEL_HEIGHT + BLACK_SPACER_HEIGHT) / TRAVEL_TIME_PER_LEVEL)

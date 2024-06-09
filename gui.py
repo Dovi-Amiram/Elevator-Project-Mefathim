@@ -1,7 +1,7 @@
 import pygame
 import sys
 from settings import *
-from Building import Building
+from building_class import Building
 
 # Initialize Pygame
 pygame.init()
@@ -22,6 +22,7 @@ building = Building(world,
                     LEVEL_IMAGE,
                     ELEVATOR_IMAGE,
                     WHITE_MARGIN)
+building.draw(world)
 
 # Main loop
 running = True
