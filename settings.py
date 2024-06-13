@@ -10,6 +10,7 @@ FILE_PATH = MENIVIM_FILE_PATH if MENIVIM_MODE else JSON_FILE_PATH
 
 data = load_json(FILE_PATH)
 
+DING_FILE_PATH = "ding.mp3"
 NUM_OF_ELEVATORS = data["num_of_elevators"]
 NUM_OF_LEVELS = data["num_of_levels"] + 1
 ELEVATOR_SCALE = (60, 60)
@@ -23,7 +24,7 @@ BLACK_SPACER_HEIGHT = 7
 
 BUTTON_WIDTH, BUTTON_HEIGHT = 45, 30
 BUTTON_COLOR = (220, 220, 220)  # Grey color
-TEXT_COLOR = (0, 0, 0)  # Black color
+TEXT_COLOR = pygame.Color("black")  # Black color
 SHADOW_COLOR = (50, 50, 50)
 BORDER_COLOR = (30, 30, 30)
 FONT_SIZE = 30

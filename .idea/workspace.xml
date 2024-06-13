@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8d1c333-83ef-4031-a0e7-9055db550407" name="Changes" comment="refactoring">
-      <change beforePath="$PROJECT_DIR$/Building.py" beforeDir="false" afterPath="$PROJECT_DIR$/building_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Elevator.py" beforeDir="false" afterPath="$PROJECT_DIR$/elevator_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Level.py" beforeDir="false" afterPath="$PROJECT_DIR$/level_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/building_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/building_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elevator_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/elevator_class.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/level_class.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/static_functions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +114,8 @@
       <workItem from="1717933994704" duration="642000" />
       <workItem from="1717940932382" duration="8000" />
       <workItem from="1717940971675" duration="7547000" />
-      <workItem from="1717950132239" duration="2852000" />
+      <workItem from="1717950132239" duration="2904000" />
+      <workItem from="1718262089281" duration="6875000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;wrote building, Elevator, Level and GameManager classes. able to draw starting positions&quot;">
       <option name="closed" value="true" />
@@ -150,23 +153,12 @@
     <MESSAGE value="refactoring" />
     <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/building_class.py</url>
-          <line>31</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Elevator_Project_Mefathim$Building.coverage" NAME="Building Coverage Results" MODIFIED="1716997657708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Elevator_Project_Mefathim$Elevator.coverage" NAME="Elevator Coverage Results" MODIFIED="1717948841688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Elevator_Project_Mefathim$Level.coverage" NAME="Level Coverage Results" MODIFIED="1717070432359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Elevator_Project_Mefathim$GameManager.coverage" NAME="GameManager Coverage Results" MODIFIED="1717075128532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Elevator_Project_Mefathim$FileDemo.coverage" NAME="FileDemo Coverage Results" MODIFIED="1717074891026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Elevator_Project_Mefathim$gui.coverage" NAME="gui Coverage Results" MODIFIED="1717952346261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Elevator_Project_Mefathim$gui.coverage" NAME="gui Coverage Results" MODIFIED="1718264084400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -1,12 +1,18 @@
 import pygame
 from settings import *
 
+
 class Level:
 
     def __init__(self, level_num, image):
         self.__num = level_num
         self.__image = image
-        self.__rect = None
+        self.__elevator_y = None
+        self.__button_rect = None
+        self.__button_color = BUTTON_COLOR
+        self.__elevator_on_the_way = self.__num == 0
+        self.__elevator_stop_y = 0
+        self.__display_timer = False
         self.__deck = 0
         self.__x = 0
         self.__y = 0
@@ -30,7 +36,7 @@ class Level:
         pygame.draw.rect(surface, SHADOW_COLOR, shadow_rect, border_radius=10)
 
         # Draw the button rectangle with border
-        pygame.draw.rect(surface, BUTTON_COLOR, button_rect, border_radius=10)
+        pygame.draw.rect(surface, self.__button_color, button_rect, border_radius=10)
         pygame.draw.rect(surface, BORDER_COLOR, button_rect, 2, border_radius=10)
 
         # Create the text surface with the floor number
@@ -41,9 +47,33 @@ class Level:
         # Draw the text on the button
         surface.blit(text_surface, text_rect)
 
+    def set_elevator_stop_y(self, y):
+        self.__elevator_stop_y = y
+
+    def elevator_arrived(self):
+        self.__button_color = BUTTON_COLOR
+        self.__display_timer = False
+        ding = pygame.mixer.Sound(DING_FILE_PATH)
+        ding.play()
+
+    def get_elevator_stop_y(self):
+        return self.__elevator_stop_y
+
     def set_rect(self, rect):
         self.__rect = rect
 
     def get_num(self):
         return self.__num
 
+    def __set_call(self):
+        self.__button_color = pygame.Color("green")
+        self.__elevator_on_the_way = True
+
+    def elevator_on_the_way(self):
+        return self.__elevator_on_the_way
+
+    def check_call(self, x, y):
+        if self.__button_rect.collidepoint(x, y):
+            self.__set_call()
+            return True
+        return False

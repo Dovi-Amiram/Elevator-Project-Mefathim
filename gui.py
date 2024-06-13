@@ -35,6 +35,11 @@ while running:
                 scroll_y = max(0, scroll_y - 20)
             elif event.button == 5:  # Mouse wheel down
                 scroll_y = min(max_scroll_y, scroll_y + 20)
+            elif event.button == 1:
+                x, y = event.pos
+                building.check_calls(x, y)
+
+    building.draw(world)
 
     # Blit the world to the screen at the current scroll position
     screen.blit(world, (0, -scroll_y))

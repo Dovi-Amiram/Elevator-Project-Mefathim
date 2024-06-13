@@ -14,6 +14,7 @@ class Elevator:
         self.__image_height = image.get_height()
         self.__num = elevator_num
         self.__current_level = 0
+        self.__resting = False
         self.__tasks = deque([])
         self.__x = 0
         self.__y = 0
@@ -25,15 +26,29 @@ class Elevator:
         y_pos = building_deck - level_height + ((level_height - self.__image_height) // 2)
         world.blit(self.__image, (x_pos, y_pos))
 
+    def __wait(self):
+        dest, finnish_time = self.__tasks.popleft()
+        current_time = time.time()
+        if current_time >= finnish_time:
+            self.__resting = False
+
     def move(self):
-        if len(self.__tasks) > 0:
+        if self.__resting:
+            self.__wait()
+        elif len(self.__tasks) > 0:
             dest, _ = self.__tasks.popleft()
-            dest_y =
+            dest_y = dest.get_elevator_stop_y()
             if self.__y != dest_y:
                 distance = dest_y - self.__y
                 direction = distance / abs(distance)
                 elapsed_time = time.time() - self.__departure_time
-                new_y = self.__departure_y +
+                new_y = self.__departure_y + direction * elapsed_time
+                if abs(self.__y - new_y) < abs(self.__y - dest_y):
+                    self.__y = new_y
+                else:
+                    self.__y = dest_y
+                    dest.elevator_arrived()
+                    self.__resting = True
 
     def draw(self, world):
         world.blit(self.__image, (self.__x, self.__y))

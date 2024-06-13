@@ -13,7 +13,7 @@ class Building:
             rect = LEVEL_RECT
             rect.y = world.get_height() - ((level.get_num() + 1) * LEVEL_HEIGHT + WHITE_MARGIN)
             level.set_rect(rect)
-
+            level.set_elevator_stop_y(rect.y + (LEVEL_HEIGHT - elevator_image.get_height()) // 2)
         self.__right_edge = self.__level_img.get_width() + WHITE_MARGIN
         self.__deck = world.get_height() - WHITE_MARGIN
 
@@ -41,13 +41,19 @@ class Building:
     def get_elevator_img(self):
         return self.__elevator_img
 
+    def check_calls(self, x, y):
+        for level in self.__levels:
+            if level.check_call(x, y):
+                self.allocate_elevator(level)
+
     def allocate_elevator(self, destination):
+        dest_num = destination.get_num()
         earliest_finnish_time = float("inf")
         optimal_elevator = None
         for elevator in self.__elevators:
             last_task = elevator.get_last_task()
-            last_level, last_finnish_time = last_task if last_task else elevator.get_current_level(), 0
-            travel_distance = get_travel_distance(last_level, destination, LEVEL_HEIGHT)
+            last_stop, last_finnish_time = last_task if last_task else elevator.get_current_level(), 0
+            travel_distance = get_travel_distance(last_stop, dest_num, LEVEL_HEIGHT)
             potential_finnish_time = last_finnish_time + travel_distance / TRAVEL_SPEED + DELAY_AT_DESTINATION
             if potential_finnish_time < earliest_finnish_time:
                 earliest_finnish_time = potential_finnish_time
