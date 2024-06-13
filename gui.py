@@ -10,19 +10,22 @@ pygame.display.set_caption(CAPTION)
 
 # Create a larger surface (world)
 world = pygame.Surface((WORLD_WIDTH, WORLD_HEIGHT))
-world.fill((255, 255, 255))  # Fill the world with a white color
 
 # Scroll variable
-scroll_y = 0
-max_scroll_y = WORLD_HEIGHT - WINDOW_HEIGHT
+
 
 building = Building(world,
                     NUM_OF_LEVELS,
                     NUM_OF_ELEVATORS,
                     LEVEL_IMAGE,
-                    ELEVATOR_IMAGE,
-                    WHITE_MARGIN)
-building.draw(world)
+                    ELEVATOR_IMAGE)
+
+building.draw()
+
+
+max_scroll_y = WORLD_HEIGHT - WINDOW_HEIGHT
+scroll_y = max_scroll_y
+
 
 # Main loop
 running = True
@@ -39,7 +42,7 @@ while running:
                 x, y = event.pos
                 building.check_calls(x, y)
 
-    building.draw(world)
+    building.update()
 
     # Blit the world to the screen at the current scroll position
     screen.blit(world, (0, -scroll_y))
