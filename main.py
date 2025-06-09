@@ -1,53 +1,49 @@
-from config import *
-from building import *
+from factory_method import *
+from neighbourhood import *
 
 # Initialize Pygame
 pygame.init()
-screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
+clock = pygame.time.Clock()
+
+neighbourhood = Neighbourhood()
+
+screen = pygame.display.set_mode(
+    (min(WINDOW_WIDTH, neighbourhood.canvas.get_width()), min(WINDOW_HEIGHT, neighbourhood.canvas.get_height())))
 pygame.display.set_caption(CAPTION)
 
-# Create a larger surface (canvas)
-canvas_height = max(WHITE_MARGIN * 3 + NUM_OF_FLOORS * FLOOR_HEIGHT, WINDOW_HEIGHT)
-canvas = pygame.Surface((WINDOW_WIDTH, canvas_height))
-
-# Scroll variable
-max_scroll_y = canvas_height - WINDOW_HEIGHT
+max_scroll_y = neighbourhood.canvas.get_height() - screen.get_height()
 scroll_y = max_scroll_y
 
-# create building instance
-building = Building(NUM_OF_FLOORS, NUM_OF_ELEVATORS, canvas_height)
+max_scroll_x = neighbourhood.canvas.get_width() - screen.get_width()
+scroll_x = 0
 
 # Main loop
 run = True
+
 while run:
-    canvas.fill(SWAN_WING)
-    pos = None
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 4:  # Mouse wheel up
-                scroll_y = max(0, scroll_y - SCROLL_SPEED)
+                scroll_y = max(0, scroll_y - SCROLL_SPEED_Y)
             elif event.button == 5:  # Mouse wheel down
-                scroll_y = min(max_scroll_y, scroll_y + SCROLL_SPEED)
+                scroll_y = min(max_scroll_y, scroll_y + SCROLL_SPEED_Y)
             elif event.button == 1:
-                pos = event.pos
-                for floor in building.floors:
-                    level = floor.button_pressed(pos)
-                    if level is not None:
-                        floor.button_compressed = True
-        elif event.type == pygame.MOUSEBUTTONUP:
-            pos = event.pos
-            for floor in building.floors:
-                if floor.button_compressed:
-                    building.allocate_elevator(floor.level)
-                    floor.button_compressed = False
+                neighbourhood.handle_click(event.pos)
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]:
+        scroll_x = max(0, scroll_x - SCROLL_SPEED_X)
+    if keys[pygame.K_RIGHT]:
+        scroll_x = min(max_scroll_x, scroll_x + SCROLL_SPEED_X)
 
-    building.update()
-    building.draw(canvas)
+    DeltaTime().update()
+    neighbourhood.update()
 
     # Blit the canvas to the screen at the current scroll position
-    screen.blit(canvas, (0, -scroll_y))
+    screen.blit(neighbourhood.canvas, (-scroll_x, -scroll_y))
+
+    clock.tick(60)
 
     # Update the display
     pygame.display.flip()
