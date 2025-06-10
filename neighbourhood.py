@@ -1,4 +1,4 @@
-from delta_time import DeltaTime
+from time_keeper import DeltaTime
 from factory_method import *
 
 
@@ -17,11 +17,11 @@ class Neighbourhood:
             current_left += current_width
 
     def handle_click(self, pos: tuple[int, int]) -> None:
-        x, _ = pos
+        x, y = pos
         for i, building in enumerate(self.buildings):
             left, right = self.building_borders[i]
             if left < x < right:
-                building.handle_click(pos)
+                building.handle_click((x - left, y - (self.canvas.get_height() - building.canvas.get_height())))
                 return
 
     def draw(self):

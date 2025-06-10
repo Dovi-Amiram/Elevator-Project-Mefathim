@@ -30,7 +30,8 @@ while run:
             elif event.button == 5:  # Mouse wheel down
                 scroll_y = min(max_scroll_y, scroll_y + SCROLL_SPEED_Y)
             elif event.button == 1:
-                neighbourhood.handle_click(event.pos)
+                x, y = event.pos
+                neighbourhood.handle_click((x + scroll_x, y + scroll_y))
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]:
         scroll_x = max(0, scroll_x - SCROLL_SPEED_X)

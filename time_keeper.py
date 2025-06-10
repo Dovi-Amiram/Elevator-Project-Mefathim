@@ -1,5 +1,7 @@
 import pygame.time
 
+def get_current_time() -> float:
+    return pygame.time.get_ticks() / 1000  # convert to seconds
 
 def singleton(class_):
     instances = {}
@@ -16,14 +18,14 @@ def singleton(class_):
 class DeltaTime:
 
     def __init__(self):
-        self.__last_update = pygame.time.get_ticks() / 1000  # convert to seconds
-        self.__delta = 0  # delta time
+        self.__last_update = get_current_time()  # convert to seconds
+        self.__delta_time = 0  # delta time
 
     def update(self) -> None:
-        current_time = pygame.time.get_ticks() / 1000  # convert to seconds
-        self.__delta = current_time - self.__last_update
+        current_time = get_current_time()  # convert to seconds
+        self.__delta_time = current_time - self.__last_update
         self.__last_update = current_time
 
     @property
     def dt(self) -> float:
-        return self.__delta
+        return self.__delta_time
