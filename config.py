@@ -11,7 +11,8 @@ BUTTON_SIZE = BUTTON_WIDTH, BUTTON_HEIGHT = 45, 30
 WHITE_MARGIN = 8
 FLOOR_SIZE = FLOOR_WIDTH, FLOOR_HEIGHT = 143, 76
 BUTTON_RADIUS = 13
-FONT_SIZE = 23
+BUTTON_FONT_SIZE = 24
+TIMER_FONT_SIZE = 18
 
 # constants
 CAPTION = "Dovi's Elevator Project - Mefathim"
@@ -36,7 +37,7 @@ SWAN_WING = 245, 240, 235
 LIME_GREEN = 50, 205, 50
 
 BUILDINGS = {
-    0: (7, 3),
+    0: (51, 6),
     1: (7, 4),
     2: (17, 5),
     3: (20, 7),
