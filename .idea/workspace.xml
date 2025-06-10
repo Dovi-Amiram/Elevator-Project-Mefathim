@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8d1c333-83ef-4031-a0e7-9055db550407" name="Changes" comment="added time keeper file">
+    <list default="true" id="b8d1c333-83ef-4031-a0e7-9055db550407" name="Changes" comment="fixed gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elevator.py" beforeDir="false" afterPath="$PROJECT_DIR$/elevator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/factory_method.py" beforeDir="false" afterPath="$PROJECT_DIR$/factory_method.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/floor.py" beforeDir="false" afterPath="$PROJECT_DIR$/floor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,11 +21,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -55,34 +46,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Building.executor": "Run",
-    "Python.Elevator.executor": "Run",
-    "Python.FileDemo.executor": "Run",
-    "Python.GameManager.executor": "Run",
-    "Python.Level.executor": "Run",
-    "Python.config.executor": "Run",
-    "Python.delta_time.executor": "Run",
-    "Python.floor.executor": "Run",
-    "Python.gui.executor": "Debug",
-    "Python.main.executor": "Run",
-    "Python.settings.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "redo",
-    "last_opened_file_path": "C:/Users/USER/PycharmProjects/Elevator-Project-Mefathim",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Building.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Elevator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.FileDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.GameManager.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Level.executor&quot;: &quot;Run&quot;,
+    &quot;Python.config.executor&quot;: &quot;Run&quot;,
+    &quot;Python.floor.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gui.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.settings.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/PycharmProjects/Elevator-Project-Mefathim&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\USER\PycharmProjects\Elevator-Project-Mefathim" />
@@ -185,15 +174,7 @@
       <option name="project" value="LOCAL" />
       <updated>1718272229733</updated>
     </task>
-    <task id="LOCAL-00006" summary="added time keeper file">
-      <option name="closed" value="true" />
-      <created>1749380073171</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1749380073171</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,8 +203,7 @@
     <MESSAGE value="refactoring" />
     <MESSAGE value="added some functions. still need to see how and when to update certain flags, fix constants, and draw functions" />
     <MESSAGE value="fixed gitignore" />
-    <MESSAGE value="added time keeper file" />
-    <option name="LAST_COMMIT_MESSAGE" value="added time keeper file" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed gitignore" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Elevator_Project_Mefathim$Building.coverage" NAME="Building Coverage Results" MODIFIED="1716997657708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

@@ -86,7 +86,6 @@ class Floor:
             self.timer -= DeltaTime().dt
             if self.timer <= 0:
                 self.timer = 0
-                self.elevator_arrived()
 
     def ordered_elevator(self, click_pos: tuple[int, int]) -> Union[int, None]:
         """
