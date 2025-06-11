@@ -1,7 +1,3 @@
-Absolutely. Based on the full scope and structure of your project, here is a polished and complete `README.md` that’s professional, developer-friendly, and fully aligned with your design:
-
----
-
 # 🚀 Elevator Simulation Project
 
 A Python-based interactive simulation of a multi-building elevator system designed for performance, clarity, and extensibility.
